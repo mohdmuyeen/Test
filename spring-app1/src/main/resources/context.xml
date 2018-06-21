@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id ="message" class="com.demo.spring.Message" scope="prototype"> 
+	<constructor-arg value="Lunc Break" />
+	<constructor-arg value="we will get good meal today " />
+</bean>
+<bean id="mail" class="com.demo.spring.Mail" scope="prototype">
+	<property name="fromAddress" value="Trainer"></property>
+	<property name="toAddress" value="All"></property>
+	<property name="message" ref="message"></property>
+</bean>
+</beans>
